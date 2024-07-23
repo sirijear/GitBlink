@@ -12,6 +12,7 @@ void loop() {
   if (millis() - previousMillis >= delayTime) {
     ledState = 1 - ledState;
     digitalWrite(ledPin, ledState);
+    previousMillis = millis();
   }
 }
 
