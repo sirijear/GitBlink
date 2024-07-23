@@ -1,14 +1,17 @@
 const int ledPin = 13;
-const int delayTime = 500; 
+const int delayTime = 500;
+
+unsigned long previousMillis;
+uint8_t ledState = LOW;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);
-  delay(delayTime);
-  digitalWrite(ledPin, LOW);
-  delay(delayTime);
+  if (millis() - previousMillis >= delayTime) {
+    ledState = 1 - ledState;
+    digitalWrite(ledPin, ledState);
+  }
 }
 
