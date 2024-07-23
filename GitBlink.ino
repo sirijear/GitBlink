@@ -1,10 +1,14 @@
+const int ledPin = 13;
+const int delayTime = 500; 
+
 void setup() {
-  pinMode(13, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(500);
-  digitalWrite(13, LOW);
-  delay(500);
+  digitalWrite(ledPin, HIGH);
+  delay(delayTime);
+  digitalWrite(ledPin, LOW);
+  delay(delayTime);
 }
+
